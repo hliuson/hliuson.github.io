@@ -2,7 +2,7 @@
 title = 'Low-Parameter Soft-Prompt Learning for Behavioral Adaptation in LLMs'
 date = 2024-08-15
 draft = false
-categories = ['Research']
+tags = ['Research']
 +++
 ### October Update and Future Work
 Some of the issues in our earlier work, mostly owing to running out of time at the end of my internship, were poorly conducted evals and dubious performance on the "movie dialogue" dataset. The evals were difficult, and this remains an open problem, as in general evaluating performance on generative tasks is somewhat difficult. In the future, I'd like to conduct human evals in order to see if they can distinguish between human and LLM output on a given class.

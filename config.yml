@@ -33,7 +33,7 @@ languages:
           url: /
           weight: 5
         - name: Research
-          url: categories/research
+          url: tags/research
           weight: 10
         - name: CV
           url: files/resume.pdf

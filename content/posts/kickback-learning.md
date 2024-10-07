@@ -2,7 +2,7 @@
 title = "Revisiting Kickback: Learning without Backpropagation"
 date = 2022-05-01
 draft = false
-categories = ['Research']
+tags = ['Research']
 +++
 ## Summary 
 
