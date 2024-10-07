@@ -1,6 +1,6 @@
 +++
 title = "Elite Convergence in the Colonial Andes"
-date = 2024-12-15
+date = 2023-12-13
 draft = false
 tags = ['History']
 +++
