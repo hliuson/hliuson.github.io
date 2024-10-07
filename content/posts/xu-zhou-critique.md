@@ -1,7 +1,7 @@
 +++
 title = "Evaluating the Claims of \"SAT Requires Exhaustive Search\""
 date = 2024-04-05
-draft = true
+draft = false
 categories = ['Research']
 +++
 ## Summary 

@@ -1,7 +1,7 @@
 +++
 title = "A Critique of Du's \"A Polynomial-Time Algorithm for 3-SAT\""
 date = 2024-04-05
-draft = true
+draft = false
 categories = ['Research']
 +++
 ## Summary 
