@@ -5,9 +5,9 @@ draft = false
 tags = ['Research']
 +++
 ### October Update and Future Work
-Some of the issues in our earlier work, mostly owing to running out of time at the end of my internship, were poorly conducted evals and dubious performance on the "movie dialogue" dataset. The evals were difficult, and this remains an open problem, as in general evaluating performance on generative tasks is somewhat difficult. In the future, I'd like to conduct human evals in order to see if they can distinguish between human and LLM output on a given class.
+Onf of the issues in our earlier work, mostly owing to running out of time at the end of my internship, were somewhat poorly conducted evals and dubious performance on the "movie dialogue" dataset. However, in general assessing generation quality is quite difficult and subjective. In the future, I'd like to conduct more robust evaluations, if possible using human evaluators.
 
-The other issue was that we found in practice that conversations in movies often don't make that much sense when you strip the audio-visual context. In order to address this issue, as well as see how our method improves with scale, I am working on scraping a set of characters and dialogue from openly-available online fiction, such as Project Gutenberg.
+Another issue was that we found in practice that conversations in movies often don't make that much sense when you strip the audio-visual context. In order to address this issue, as well as see how our method improves with scale, I am working on scraping a set of characters and dialogue from openly-available online fiction, such as Project Gutenberg.
 
 ### Summary 
 We pre-train a set of soft-prompts and learn character personas as linear mixtures of those soft prompts. I was primarily motivated by the heavy use of synthetic data in the current literature. It seems to me like that's trying to force the dataset into a method that doesn't really work for it. I feel especially that un-finetuned LLMs subject to heavy RLHF training have very samey output, which is not very suitable for training.
