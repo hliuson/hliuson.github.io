@@ -5,7 +5,9 @@ menu = "main"
 weight = 50
 +++
 # About Me
-I am a 4th year student at the University of Rochester, majoring in Computer Science and History with a minor in Mathematics. I am currently working with Jianxun Lian at Microsoft Research Asia on adapting LLMs for roleplay tasks, which you can read about here: [Low-Parameter Soft-Prompt Learning for Behavioral Adaptation in LLMs](/posts/low-param-soft-prompt/).
+I am a 4th year student at the University of Rochester, majoring in Computer Science and History.
+
+Currently, I am working with Jianxun Lian at Microsoft Research Asia on adapting LLMs for roleplay tasks, which you can read about here: [Low-Parameter Soft-Prompt Learning for Behavioral Adaptation in LLMs](/posts/low-param-soft-prompt/).
 
 At the University of Rochester I have had the privilege of working with Professors Lane Hemaspaandra, Chris Kanan, and PhD students Michael C. Chavrimootoo (Now professor) and Jhair Gallardo.
 
