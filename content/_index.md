@@ -5,17 +5,14 @@ menu = "main"
 weight = 50
 +++
 # About Me
-I am a 4th year student at the University of Rochester, majoring in Computer Science and History.
+I am a Masters student at the University of Michigan. I graduated in May 2025 from the University of Rochester with a BS in Computer Science and a BA in History.
 
-Currently, I am working with Jianxun Lian at Microsoft Research Asia on adapting LLMs for roleplay tasks, which you can read about here: [Low-Parameter Soft-Prompt Learning for Behavioral Adaptation in LLMs](/posts/low-param-soft-prompt/).
+Additionally, I work part time as an ML Researcher for Algoverse AI, where I mentor undergraduate students in a 12-week research program.
 
-At the University of Rochester I have had the privilege of working with Professors Lane Hemaspaandra, Chris Kanan, and PhD students Michael C. Chavrimootoo (Now professor) and Jhair Gallardo.
+Previously, I worked at Microsoft Research Asia with Jianxun Lian on adapting LLMs for roleplay tasks, which you can read about here: [Low-Parameter Soft-Prompt Learning for Behavioral Adaptation in LLMs](/posts/low-param-soft-prompt/). At the University of Rochester I had the privilege of working with Lane Hemaspaandra and Michael C. Chavrimootoo on the computational complexity of election under voting rule uncertainty, and Chris Kanan and Jhair Gallardo on training neural networks without backpropagation.
 
 I published two critique papers on arXiv which debunked preprints which claimed to resolve the P=NP question.
  - [Evaluating the Claims of "SAT Requires Exhaustive Search"](/posts/xu-zhou-critique)
  - [A Critique of Du's "A Polynomial-Time Algorithm for 3-SAT"](/posts/du-3sat-critique)
 
-### Misc    
- Outside of computer science, I am interested in history with a focus on political economy and imperialism. You can find some of my writings which discuss the role of particular local elites in imperialism here:
- - [Feudalism and Class Power in Rural Manchukuo](/posts/feudalism-manchukuo)
- - [Elite Convergence in the Colonial Andes](/posts/colonial-andes)
+My research in history concentrated on topics of political economy, imperialism, and elite formation.
