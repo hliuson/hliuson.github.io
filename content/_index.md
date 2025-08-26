@@ -7,11 +7,9 @@ weight = 50
 # About Me
 I am a Masters student at the University of Michigan. I graduated in May 2025 from the University of Rochester with a BS in Computer Science and a BA in History.
 
-Additionally, I work part time as an ML Researcher for Algoverse AI, where I mentor undergraduate students in a 12-week research program.
+I interned at Microsoft Research Asia working under Jianxun Lian on adapting LLMs for roleplay tasks with extremely few data examples, which you can read about here: [Low-Parameter Soft-Prompt Learning for Behavioral Adaptation in LLMs](/posts/low-param-soft-prompt/). At the University of Rochester I had the privilege of working with Lane Hemaspaandra and Michael C. Chavrimootoo on the computational complexity of election under voting rule uncertainty, and Chris Kanan and Jhair Gallardo on training neural networks without backpropagation.
 
-Previously, I worked at Microsoft Research Asia with Jianxun Lian on adapting LLMs for roleplay tasks, which you can read about here: [Low-Parameter Soft-Prompt Learning for Behavioral Adaptation in LLMs](/posts/low-param-soft-prompt/). At the University of Rochester I had the privilege of working with Lane Hemaspaandra and Michael C. Chavrimootoo on the computational complexity of election under voting rule uncertainty, and Chris Kanan and Jhair Gallardo on training neural networks without backpropagation.
-
-I published two critique papers on arXiv which debunked preprints which claimed to resolve the P=NP question.
+While at the UofR, I coauthored two critique papers which debunked preprints which claimed to resolve the P=NP questio
  - [Evaluating the Claims of "SAT Requires Exhaustive Search"](/posts/xu-zhou-critique)
  - [A Critique of Du's "A Polynomial-Time Algorithm for 3-SAT"](/posts/du-3sat-critique)
 
