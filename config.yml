@@ -53,7 +53,9 @@ outputs:
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
   description: "My personal website"
-  author: Harry Liuson
+  author:
+    name: Harry Liuson
+    email: "hliuson@hotmail.com"
   # author: ["Me", "You"] # multiple authors
 
   defaultTheme: auto
@@ -96,7 +98,7 @@ params:
 
   #    - PaperMod is based on theme [Paper](https://github.com/nanxiaobei/hugo-paper/tree/4330c8b12aa48bfdecbcad6ad66145f679a430b3).
 
-  socialIcons:
+  #socialIcons:
     # - name: github
     #  title: View Source on Github
     #  url: "https://github.com/adityatelange/hugo-PaperMod"
