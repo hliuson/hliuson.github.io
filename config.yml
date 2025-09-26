@@ -72,32 +72,12 @@ params:
   ShowPageNums: true
   ShowToc: true
   # comments: false
-  images: ["images/papermod-cover.png"]
+  #images: ["images/papermod-cover.png"]
 
-  profileMode:
-    enabled: false
-    title: PaperMod
-    imageUrl: "#"
-    imageTitle: my image
-    # imageWidth: 120
-    # imageHeight: 120
-    buttons:
-      - name: Archives
-        url: archives
-      - name: Tags
-        url: tags
 
-  #homeInfoParams:
-    #Title: "PaperMod's Demo"
-    #Content: >
-    #  👋 Welcome to demo page of Hugo's theme PaperMod!
-
-    #  - **PaperMod**  is designed to be clean and simple but fast and responsive theme with useful feature-set that enhances UX.
-
-   #   - Feel free to show your support by giving us a star 🌟 on GitHub and sharing with your friends and social media .
-
-  #    - PaperMod is based on theme [Paper](https://github.com/nanxiaobei/hugo-paper/tree/4330c8b12aa48bfdecbcad6ad66145f679a430b3).
-
+  homeInfoParams:
+    Title: "Welcome"
+    Content: Hi, I'm Harry. Welcome to my site.
   socialIcons:
      - name: github
        title: Github
@@ -105,7 +85,7 @@ params:
      - name: linkedin
        title: LinkedIn
        url: "https://www.linkedin.com/in/harry-liuson-03984b19b/"
-       
+
     #- name: Discord
     #  title: Join discord community
     #  url: "https://discord.gg/ahpmTvhVmp"
