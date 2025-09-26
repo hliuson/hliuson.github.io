@@ -98,12 +98,16 @@ params:
 
   #    - PaperMod is based on theme [Paper](https://github.com/nanxiaobei/hugo-paper/tree/4330c8b12aa48bfdecbcad6ad66145f679a430b3).
 
-  #socialIcons:
-    # - name: github
-    #  title: View Source on Github
-    #  url: "https://github.com/adityatelange/hugo-PaperMod"
+  socialIcons:
+     - name: github
+       title: Github
+       url: "https://github.com/hliuson"
+     - name: linkedin
+       title: LinkedIn
+       url: "https://www.linkedin.com/in/harry-liuson-03984b19b/"
+       
     #- name: Discord
-     # title: Join discord community
+    #  title: Join discord community
     #  url: "https://discord.gg/ahpmTvhVmp"
     #- name: X
     #  title: Share PaperMod on X/Twitter
