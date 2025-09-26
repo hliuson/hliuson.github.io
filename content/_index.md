@@ -7,7 +7,9 @@ weight = 50
 
 
 ### 
-I am currently looking for Summer 2026 research intern positions in deep learning. Feel free to reach out at [hliuson@hotmail.com](mailto:hliuson@hotmail.com).
+I am currently looking for Summer 2026 research intern positions in deep learning.
+ - Email: hliuson@umich.edu
+ - Github: [https://github.com/hliuson](https://github.com/hliuson)
 
 # About Me
 I am a Masters student at the University of Michigan. I currently am working on state representation and goal discovery in reinforcement learning with Professor [Silviu Pitis](https://silviupitis.com/).

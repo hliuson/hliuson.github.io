@@ -53,9 +53,7 @@ outputs:
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
   description: "My personal website"
-  author:
-    name: Harry Liuson
-    email: "hliuson@hotmail.com"
+  author: Harry Liuson
   # author: ["Me", "You"] # multiple authors
 
   defaultTheme: auto
@@ -73,18 +71,6 @@ params:
   ShowToc: true
   # comments: false
   #images: ["images/papermod-cover.png"]
-
-
-  homeInfoParams:
-    Title: "Welcome"
-    Content: Hi, I'm Harry. Welcome to my site.
-  socialIcons:
-     - name: github
-       title: Github
-       url: "https://github.com/hliuson"
-     - name: linkedin
-       title: LinkedIn
-       url: "https://www.linkedin.com/in/harry-liuson-03984b19b/"
 
     #- name: Discord
     #  title: Join discord community
