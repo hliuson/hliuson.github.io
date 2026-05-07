@@ -7,7 +7,7 @@ weight = 50
 
 
 # About Me
-I am a Masters student at the University of Michigan. I currently am working on goal representations in hierarchical reinforcement learning with Professor [Silviu Pitis](https://silviupitis.com/).
+I am a Masters student at the University of Michigan. I currently am working on goal-conditioned hierarchical reinforcement learning with Professor [Silviu Pitis](https://silviupitis.com/).
 
 I interned at Microsoft Research Asia in the summer of 2024 working under Jianxun Lian on adapting LLMs for roleplay tasks with extremely few data examples, which you can read about here: [Low-Parameter Soft-Prompt Learning for Behavioral Adaptation in LLMs](/posts/low-param-soft-prompt/). 
 
@@ -16,5 +16,3 @@ I graduated in May 2025 from the University of Rochester with a BS in Computer S
  - [A Critique of Du's "A Polynomial-Time Algorithm for 3-SAT"](/posts/du-3sat-critique)
 
 I additionally worked with Chris Kanan and Jhair Gallardo on training neural networks without backpropagation.
-
-My study in history concentrated on topics of political economy, imperialism, and class formation.
