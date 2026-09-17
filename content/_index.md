@@ -7,7 +7,7 @@ weight = 50
 
 
 # About Me
-I am a Masters student at the University of Michigan. I currently am working on goal-conditioned hierarchical reinforcement learning with Professor [Silviu Pitis](https://silviupitis.com/).
+I am a Masters student at the University of Michigan. I currently am working on topics in reinforcement learning with Professor [Silviu Pitis](https://silviupitis.com/). Some ideas I have been thinking about are regarding exploration, behavioral diversity, and multi-objective reinforcement reinforcement learning.
 
 I interned at Microsoft Research Asia in the summer of 2024 working under Jianxun Lian on adapting LLMs for roleplay tasks with extremely few data examples, which you can read about here: [Low-Parameter Soft-Prompt Learning for Behavioral Adaptation in LLMs](/posts/low-param-soft-prompt/). 
 
