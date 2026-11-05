@@ -1,0 +1,52 @@
+---
+title: Ultraviolet
+date: 2026-11-05
+kind: Project
+description: "A 50.8M-parameter transformer trained primarily on math, built for fast RL experiments on consumer GPUs."
+links:
+  - { label: code, href: "https://github.com/hliuson/ultraviolet" }
+  - { label: weights, href: "https://huggingface.co/harribo11/ultraviolet-50m-mid-alpha" }
+---
+import ThroughputChart from '../../components/ThroughputChart.astro';
+
+Ultraviolet 50M (UV-50M) is a 50.8 million parameter decoder-only transformer, trained primarily on math, for rapid RL experimentation on language models. It is intended to be a small model organism for reinforcement learning which can be effectively trained on any consumer GPU. I built it to increase the speed of iteration of my own experiments. Its name and architecture are derived from Limite 1B Violetto, built by [Paradigma](https://paradigma.inc/).
+
+I could not find any models in its size class which were suitable for rapid experimentation on consumer hardware. Most small models tend to be trained on a general mixture of natural language web data. UV-50M is trained essentially exclusively on math data, giving it a strong starting point for RLVR. Math problems can be easily verified without the need for a preference model or judge, whereas natural language or agentic environments are effectively untenable for a model of this size.
+
+More generally, UV-50M is built with performance in mind. At short context lengths (under 1k tokens) it achieves speeds exceeding 200k tokens per second on a single 2080 Ti. Teams building small models tend to aim to squeeze out as much NLL or benchmark performance per parameter as possible, or they simply haven't performed any meaningful inference optimization: why would they? This leads to absurdities like Gemma 3 270M's embeddings taking 170M parameters out of those 270M, where simply embedding and unembedding the tokens takes a significant share of model compute and parameters. Even Qwen3.5-0.8B has 250 million parameters of embeddings. Other models like Pythia-70M or Monad simply have too many full attention layers and too large a KV cache.
+
+The changes I made to Limite 1B Violetto's architecture are fairly minimal and mostly just about scaling down in a way that optimizes for inference speed. I made the model much shallower with 8 sliding window attention layers and two full attention layers, reduced the hidden dimension, and reduced the vocabulary size to 16 thousand. Vis-a-vis other small models, the use of grouped query attention and sliding window attention can reduce memory usage by one or more orders of magnitude, growing with context length. This results in a massive increase in speed for two reasons. First, reduced memory occupancy means higher batch parallelism across sequences. Secondly, a shallower model with fewer global attention layers requires less memory traffic in absolute terms per token. On older systems, memory traffic tends to be a huge bottleneck, and in earlier iterations I found that tensor cores were overwhelmingly idle while the kernel choked on memory movement.
+
+The figure below gives a roofline estimate of the maximum theoretical decode speed of different tiny models on a 2080 Ti. I make the following assumptions:
+- 1k sequence length
+- batch size as large as fits in memory after model weights
+- fp32 accumulation
+- 16-bit weights and KV cache
+
+I ignore additional factors like optimizer state, which would further weight the comparison in favor of UV-50M. Even assuming a perfect kernel, other small models achieve around a quarter of total FLOP utilization or less. UV-50M, in theory, is compute-bound, not memory-bound. UV-50M achieves about 40% of a theoretical maximum of ~500k TPS, which gives a MFU over 40%, which is pretty decent.
+
+<ThroughputChart />
+A full comparison of architectures and per-sequence memory utilization is below.
+<details class="more">
+<summary>Architecture comparison</summary>
+
+
+
+<figure class="table" id="kv-cache">
+<table>
+<thead>
+<tr><th rowspan="2">Model</th><th rowspan="2">Attention layers</th><th rowspan="2">KV heads × head dim</th><th colspan="2" class="group">KV cache per seq.</th></tr>
+<tr><th class="num">@ 1k</th><th class="num">@ 8k</th></tr>
+</thead>
+<tbody>
+<tr><td>UV-50M</td><td>2 Global / 8 Local</td><td>1 × 64</td><td class="num">1.0 MiB</td><td class="num">4.5 MiB</td></tr>
+<tr><td>KLM-1.5</td><td>6 Global / 18 Linear</td><td>4 × 64</td><td class="num">8.4 MiB</td><td class="num">50.4 MiB</td></tr>
+<tr><td>Pythia-70M</td><td>6 Global</td><td>8 × 64</td><td class="num">12 MiB</td><td class="num">96 MiB</td></tr>
+<tr><td>SmolLM-135M</td><td>30 Global</td><td>3 × 64</td><td class="num">22.5 MiB</td><td class="num">180 MiB</td></tr>
+<tr><td>Monad</td><td>64 Global</td><td>4 × 64</td><td class="num">64 MiB</td><td class="num">512 MiB</td></tr>
+</tbody>
+</table>
+<figcaption>Analytic KV cache and recurrent state size per sequence in 16-bit precision.</figcaption>
+</figure>
+
+</details>

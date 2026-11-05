@@ -1,0 +1,25 @@
+---
+import { render } from 'astro:content';
+import Article from '../../layouts/Article.astro';
+import { getPosts, hasPage } from '../../lib/content';
+
+export async function getStaticPaths() {
+  const posts = (await getPosts()).filter(hasPage);
+  return posts.map((post) => ({ params: { slug: post.id }, props: { post } }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+const d = post.data;
+---
+
+<Article
+  title={d.title}
+  date={d.date}
+  description={d.description}
+  meta={[d.kind, d.authors, d.venue].filter(Boolean).join(' · ')}
+  draft={d.draft}
+  links={d.links}
+>
+  <Content />
+</Article>
