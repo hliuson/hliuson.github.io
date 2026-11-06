@@ -1,10 +1,11 @@
 :root {
-  --bg: #fbfaf7;
-  --fg: #1f1d1a;
-  --muted: #6b665e;
-  --rule: #e4e0d8;
-  --accent: #5a3fc0;
-  --code-bg: #f2efe9;
+  --bg: #f8fafb;
+  --fg: #1a1e22;
+  --muted: #5d6670;
+  --rule: #dfe4e8;
+  --accent: #1b5fae; /* blue: links */
+  --accent-2: #0277b0; /* cyan: hovers and highlights */
+  --code-bg: #eef2f5;
   --measure: 40rem;
   --sans: 'IBM Plex Sans Variable', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --mono: ui-monospace, 'SF Mono', 'Cascadia Code', Consolas, monospace;
@@ -13,12 +14,13 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #15141a;
-    --fg: #e6e3dc;
-    --muted: #9a958c;
-    --rule: #2c2a33;
-    --accent: #b3a1ff;
-    --code-bg: #1e1d25;
+    --bg: #111518;
+    --fg: #e3e8ec;
+    --muted: #93a0ab;
+    --rule: #252b31;
+    --accent: #8ac4ff;
+    --accent-2: #7dd3fc;
+    --code-bg: #182025;
   }
 }
 
@@ -88,7 +90,7 @@ h3 {
   text-decoration: none;
 }
 .site-header nav a:hover {
-  color: var(--accent);
+  color: var(--accent-2);
 }
 
 .site-footer {
@@ -107,6 +109,62 @@ h3 {
   font-size: 2rem;
   margin: 2.5rem 0 0.5rem;
 }
+/* Availability callout under the name: noticeable, but quiet. */
+.status {
+  margin: 1.1rem 0 0;
+  padding: 0.45rem 0.8rem;
+  border-left: 3px solid var(--accent-2);
+  border-radius: 0 4px 4px 0;
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--accent-2) 11%, transparent),
+    color-mix(in srgb, var(--accent) 5%, transparent)
+  );
+  font-size: 0.9rem;
+}
+
+/* Homepage layout: one column on narrow screens (bio, posts, teaching);
+   on wide screens posts move to a sidebar beside everything else. */
+@media (min-width: 60rem) {
+  .wrap--wide {
+    max-width: 62rem;
+  }
+  .home-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 19rem;
+    grid-template-rows: auto 1fr;
+    column-gap: 3.5rem;
+    align-items: start;
+  }
+  .home-main {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .home-teaching {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  .home-side {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    padding-left: 1.75rem;
+    border-left: 1px solid var(--rule);
+    margin-top: 2.5rem;
+  }
+  .home-side .section-title {
+    margin-top: 0.6rem;
+  }
+  /* Narrow column: put the year above the title instead of beside it. */
+  .home-side .entry {
+    display: block;
+  }
+  .home-side .entry .year {
+    display: block;
+    font-size: 0.8rem;
+    padding-top: 0;
+  }
+}
+
 .links {
   display: flex;
   flex-wrap: wrap;
@@ -153,7 +211,7 @@ h3 {
   text-decoration: none;
 }
 .entry .title a:hover {
-  color: var(--accent);
+  color: var(--accent-2);
 }
 .entry .meta,
 .entry .desc {
@@ -177,6 +235,56 @@ h3 {
 .entry .actions a::after {
   content: ']';
   color: var(--muted);
+}
+
+/* Teaching: a compact list, deliberately lighter than posts. */
+.home-teaching .section-title {
+  margin-top: 2rem;
+}
+.compact-note {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin: 0 0 0.4rem;
+}
+.compact {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0.9rem;
+}
+.compact li {
+  display: grid;
+  grid-template-columns: 6.5rem 1fr auto;
+  gap: 0 0.75rem;
+  margin-bottom: 0.2rem;
+}
+.compact .who {
+  text-align: right;
+}
+/* Phones: instructor drops under the course name. */
+@media (max-width: 34rem) {
+  .compact li {
+    grid-template-columns: 6.5rem 1fr;
+  }
+  .compact .who {
+    grid-column: 2;
+    text-align: left;
+  }
+}
+.compact .when,
+.compact .who {
+  color: var(--muted);
+}
+.compact .when {
+  font-variant-numeric: tabular-nums;
+}
+.compact a.what {
+  color: var(--fg);
+  text-decoration-color: var(--rule);
+}
+.compact a.what:hover {
+  color: var(--accent-2);
+  text-decoration-color: var(--accent-2);
 }
 
 .empty {
@@ -352,8 +460,8 @@ h3 {
   text-underline-offset: 0.22em;
 }
 .entry .title a:hover {
-  color: var(--accent);
-  text-decoration-color: var(--accent);
+  color: var(--accent-2);
+  text-decoration-color: var(--accent-2);
 }
 
 /* Collapsible supporting detail inside posts */
@@ -369,7 +477,7 @@ h3 {
   font-size: 0.9rem;
 }
 .prose details.more > summary:hover {
-  color: var(--accent);
+  color: var(--accent-2);
 }
 .prose details.more[open] > summary {
   margin-bottom: 0.25rem;
